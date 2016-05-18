@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>Gjallarhorn.Bindable.Wpf</name></assembly>
+<members>
+<member name="T:Gjallarhorn.Bindable.Wpf.BindingTargetTypeDescriptorProvider">
+<summary>
+ [omit]
+ Internal type used to allow dynamic binding targets to be generated.        
+</summary>
+</member>
+<member name="M:Gjallarhorn.Wpf.install(System.Boolean)">
+<summary>
+ Installs WPF targets for binding into Gjallarhorn
+</summary>
+</member>
+<member name="T:Gjallarhorn.Wpf">
+<summary>
+ Platform installation
+</summary>
+</member>
+</members>
+</doc>

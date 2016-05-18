@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>Gjallarhorn.Bindable</name></assembly>
+<members>
+<member name="P:Gjallarhorn.Bindable.BindingTargetBase`1.Valid">
+<summary>
+ An ISignal&lt;bool&gt; used to track the current valid state
+</summary>
+</member>
+<member name="P:Gjallarhorn.Bindable.BindingTargetBase`1.IsValid">
+<summary>
+ True when the current value is valid.  Can be used in bindings
+</summary>
+</member>
+<member name="P:Gjallarhorn.Bindable.BindingTargetBase`1.IdleTracker">
+<summary>
+ Used by commanding to track executing operations
+</summary>
+</member>
+<member name="T:Gjallarhorn.Bindable.BindingTargetBase`1">
+<summary>
+ Base class for binding targets, used by platform specific libraries to share implementation details
+</summary>
+</member>
+<member name="P:Gjallarhorn.Bindable.BindingTargetFactory.Value">
+<summary>
+ Retrieves the binding target 
+</summary>
+</member>
+<member name="M:Gjallarhorn.Bindable.BindingTargetFactory.Generate">
+<summary>
+ Implemented by subclasses to generate a binding target
+</summary>
+</member>
+<member name="T:Gjallarhorn.Bindable.BindingTargetFactory">
+<summary>
+ Type used for building a Binding Target from a View&apos;s context
+</summary>
+</member>
+<member name="T:Gjallarhorn.Bindable.BoundSignal`1">
+<summary>
+ An ISignal&lt;&apos;a&gt; bound to a property on a source. This uses INotifyPropertyChanged to update the signal as needed
+</summary>
+</member>
+<member name="T:Gjallarhorn.Bindable.CommandParameterState`1.Executed">
+<summary>
+ The command has been executed at a specific time with a specific argument
+</summary>
+</member>
+<member name="T:Gjallarhorn.Bindable.CommandParameterState`1.Unexecuted">
+<summary>
+ The command is in an unexecuted state
+</summary>
+</member>
+<member name="T:Gjallarhorn.Bindable.CommandParameterState`1">
+<summary>
+ Reports whether a paramterized command is executed, including the timestamp of the most recent execution
+</summary>
+</member>
+<member name="T:Gjallarhorn.Bindable.CommandState.Executed">
+<summary>
+ The command has been executed at a specific time
+</summary>
+</member>
+<member name="T:Gjallarhorn.Bindable.CommandState.Unexecuted">
+<summary>
+ The command is in an unexecuted state
+</summary>
+</member>
+<member name="T:Gjallarhorn.Bindable.CommandState">
+<summary>
+ Reports whether a command is executed, including the timestamp of the most recent execution
+</summary>
+</member>
+<member name="M:Gjallarhorn.Bindable.IBindingSubject`1.OutputValue(`0)">
+<summary>
+ Outputs a value through it&apos;s observable implementation
+</summary>
+</member>
+<member name="M:Gjallarhorn.Bindable.IBindingSubject`1.OutputObservable(System.IObservable{`0})">
+<summary>
+ Outputs values by subscribing to changes on an observable
+</summary>
+</member>
+<member name="T:Gjallarhorn.Bindable.IBindingSubject`1">
+<summary>
+ Interface used to manage a typed binding target which outputs changes via IObservable
+</summary>
+</member>
+<member name="P:Gjallarhorn.Bindable.IBindingTarget.Valid">
+<summary>
+ Property allowing us to watch our validation state
+</summary>
+</member>
+<member name="P:Gjallarhorn.Bindable.IBindingTarget.OperationExecuting">
+<summary>
+ Value used to notify signal that an asynchronous operation is executing
+</summary>
+</member>
+<member name="P:Gjallarhorn.Bindable.IBindingTarget.IsValid">
+<summary>
+ Property allowing us to track whether any validation errors currently exist on this target
+</summary>
+</member>
+<member name="P:Gjallarhorn.Bindable.IBindingTarget.IdleTracker">
+<summary>
+ Value used to notify signal that an asynchronous operation is executing, as well as schedule that operations should execute
+</summary>
+</member>
+<member name="P:Gjallarhorn.Bindable.IBindingTarget.Idle">
+<summary>
+ Value used to notify the front end that we&apos;re idle
+</summary>
+</member>
+<member name="M:Gjallarhorn.Bindable.IBindingTarget.Watch``1(System.String,Gjallarhorn.ISignal{``0})">
+<summary>
+ Add a readonly binding target for a signal with a given name
+</summary>
+</member>
+<member name="M:Gjallarhorn.Bindable.IBindingTarget.TrackValidator(System.String,Gjallarhorn.Validation.ValidationResult,Gjallarhorn.ISignal{Gjallarhorn.Validation.ValidationResult})">
+<summary>
+ Track changes on an observable of validation results to raise proper validation events, initialized with a starting validation result
+</summary>
+</member>
+<member name="M:Gjallarhorn.Bindable.IBindingTarget.TrackObservable``1(System.String,System.IObservable{``0})">
+<summary>
+ Track changes on an observable to raise property changed events
+</summary>
+</member>
+<member name="M:Gjallarhorn.Bindable.IBindingTarget.RaisePropertyChanged(System.String)">
+<summary>
+ Trigger the PropertyChanged event for a specific property
+</summary>
+</member>
+<member name="M:Gjallarhorn.Bindable.IBindingTarget.ObservableToSignal``1(``0,System.IObservable{``0})">
+<summary>
+ Map an initial value and observable to a signal, and track the subscription as part of this target&apos;s lifetime
+</summary>
+</member>
+<member name="M:Gjallarhorn.Bindable.IBindingTarget.FilterValid``1(Gjallarhorn.ISignal{``0})">
+<summary>
+ Filter a signal to only output when we&apos;re valid
+</summary>
+</member>
+<member name="M:Gjallarhorn.Bindable.IBindingTarget.EditDirect``1(System.String,Microsoft.FSharp.Core.FSharpFunc{Gjallarhorn.Validation.ValidationCollector{``0},Gjallarhorn.Validation.ValidationCollector{``0}},Gjallarhorn.IMutatable{``0})">
+<summary>
+ Add a binding target for a mutable for editing with with a given name and validation which directly pushes edits back to the mutable
+</summary>
+</member>
+<member name="M:Gjallarhorn.Bindable.IBindingTarget.Edit``1(System.String,Microsoft.FSharp.Core.FSharpFunc{Gjallarhorn.Validation.ValidationCollector{``0},Gjallarhorn.Validation.ValidationCollector{``0}},Gjallarhorn.ISignal{``0})">
+<summary>
+ Add a binding target for a signal for editing with with a given name and validation, and returns a signal of the user edits
+</summary>
+</member>
+<member name="M:Gjallarhorn.Bindable.IBindingTarget.Constant``1(System.String,``0)">
+<summary>
+ Add a readonly binding target for a constant value with a given name
+</summary>
+</member>
+<member name="M:Gjallarhorn.Bindable.IBindingTarget.CommandChecked(System.String,Gjallarhorn.ISignal{System.Boolean})">
+<summary>
+ Creates a new command given a binding name and signal for tracking execution
+</summary>
+</member>
+<member name="M:Gjallarhorn.Bindable.IBindingTarget.Command(System.String)">
+<summary>
+ Creates a new command given a binding name
+</summary>
+</member>
+<member name="M:Gjallarhorn.Bindable.IBindingTarget.BindDirect``1(System.String,Gjallarhorn.IMutatable{``0})">
+<summary>
+ Add a binding target for a mutable with a given name which directly pushes edits back to the mutable
+</summary>
+</member>
+<member name="M:Gjallarhorn.Bindable.IBindingTarget.Bind``1(System.String,Gjallarhorn.ISignal{``0})">
+<summary>
+ Add a binding target for a signal with a given name, and returns a signal of the user edits
+</summary>
+</member>
+<member name="M:Gjallarhorn.Bindable.IBindingTarget.AddDisposable2``1(System.Tuple{``0,System.IDisposable})">
+<summary>
+ Adds a disposable to track from the second element of a tuple, and returns the first element.  Used with Signal subscription functions.
+</summary>
+</member>
+<member name="M:Gjallarhorn.Bindable.IBindingTarget.AddDisposable(System.IDisposable)">
+<summary>
+ Adds a disposable to track
+</summary>
+</member>
+<member name="T:Gjallarhorn.Bindable.IBindingTarget">
+<summary>
+ Interface used to manage a binding target
+</summary>
+</member>
+<member name="T:Gjallarhorn.Bindable.ITrackingCommand`1">
+<summary>
+ An ICommand which acts as a Signal over changes to the value.  This is frequently the current timestamp of the command.
+</summary>
+</member>
+<member name="M:Gjallarhorn.Bindable.ParameterCommand`1.HandleExecute(System.Object)">
+<summary>
+ Used to process the command itself
+</summary>
+</member>
+<member name="T:Gjallarhorn.Bindable.ParameterCommand`1">
+<summary>
+ Command type which uses an ISignal&lt;bool&gt; to track whether it can execute, and implements ISignal&lt;&apos;a&gt; with the command parameter each time the command updates
+ Note that this will signal for each execution, whether or not the value has changed.
+</summary>
+</member>
+<member name="T:Gjallarhorn.Bindable.SignalCommand">
+<summary>
+ Command type which uses an ISignal&lt;bool&gt; to track whether it can execute, and implements ISignal&lt;CommandState&gt;, where each execute passes DateTime.UtcNow on execution
+</summary>
+</member>
+<member name="T:Gjallarhorn.Bindable.SignalParameterCommand`1">
+<summary>
+ Command type which uses an ISignal&lt;bool&gt; to track whether it can execute, and implements ISignal&lt;DateTime&gt;, where each execute passes DateTime.UtcNow on execution
+</summary>
+</member>
+<member name="M:Gjallarhorn.Bindable.BindingSubject.create``1">
+<summary>
+ Create a binding subject for the installed platform        
+</summary>
+</member>
+<member name="T:Gjallarhorn.Bindable.BindingSubject">
+<summary>
+ Functions to work with binding targets     
+</summary>
+</member>
+<member name="M:Gjallarhorn.Bindable.BindingTarget.extend(Gjallarhorn.Bindable.IBindingTarget)">
+<summary>
+ Add bindings to an existing binding target using a computational expression
+</summary>
+</member>
+<member name="P:Gjallarhorn.Bindable.BindingTarget.binding">
+<summary>
+ Create and bind a binding target using a computational expression
+</summary>
+</member>
+<member name="M:Gjallarhorn.Bindable.BindingTarget.command(System.String,System.Windows.Input.ICommand,Gjallarhorn.Bindable.IBindingTarget)">
+<summary>
+ Add an ICommand (one way property) to a binding target by name
+</summary>
+</member>
+<member name="M:Gjallarhorn.Bindable.BindingTarget.constant``1(System.String,``0,Gjallarhorn.Bindable.IBindingTarget)">
+<summary>
+ Add a constant value (one way property) to a binding target by name
+</summary>
+</member>
+<member name="M:Gjallarhorn.Bindable.BindingTarget.watch``1(Gjallarhorn.Bindable.IBindingTarget,System.String,Gjallarhorn.ISignal{``0})">
+<summary>
+ Add a watched signal (one way property) to a binding target by name
+</summary>
+</member>
+<member name="M:Gjallarhorn.Bindable.BindingTarget.editMember``2(Gjallarhorn.Bindable.IBindingTarget,Microsoft.FSharp.Quotations.FSharpExpr,Microsoft.FSharp.Core.FSharpFunc{Gjallarhorn.Validation.ValidationCollector{``0},Gjallarhorn.Validation.ValidationCollector{``0}},Gjallarhorn.ISignal{``1})">
+<summary>
+ Add a binding to a target for a signal for editing with with a given property expression and validation, and returns a signal of the user edits
+</summary>
+</member>
+<member name="M:Gjallarhorn.Bindable.BindingTarget.editDirect``1(Gjallarhorn.Bindable.IBindingTarget,System.String,Microsoft.FSharp.Core.FSharpFunc{Gjallarhorn.Validation.ValidationCollector{``0},Gjallarhorn.Validation.ValidationCollector{``0}},Gjallarhorn.IMutatable{``0})">
+<summary>
+ Add a mutable as an editor with validation, bound to a specific name
+</summary>
+</member>
+<member name="M:Gjallarhorn.Bindable.BindingTarget.edit``1(Gjallarhorn.Bindable.IBindingTarget,System.String,Microsoft.FSharp.Core.FSharpFunc{Gjallarhorn.Validation.ValidationCollector{``0},Gjallarhorn.Validation.ValidationCollector{``0}},Gjallarhorn.ISignal{``0})">
+<summary>
+ Add a signal as an editor with validation, bound to a specific name
+</summary>
+</member>
+<member name="M:Gjallarhorn.Bindable.BindingTarget.bind``1(Gjallarhorn.Bindable.IBindingTarget,System.String,Gjallarhorn.ISignal{``0})">
+<summary>
+ Bind a signal to the binding target using the specified name
+</summary>
+</member>
+<member name="P:Gjallarhorn.Bindable.BindingTarget.create">
+<summary>
+ Create a binding target for the installed platform
+</summary>
+</member>
+<member name="M:Gjallarhorn.Bindable.BindingTarget.Builder.Binding.Watch``1(Gjallarhorn.Bindable.IBindingTarget,System.String,Gjallarhorn.ISignal{``0})">
+<summary>
+ Add a watched signal (one way property) to a binding target by name
+</summary>
+</member>
+<member name="M:Gjallarhorn.Bindable.BindingTarget.Builder.Binding.Dispose``1(Gjallarhorn.Bindable.IBindingTarget,``0)">
+<summary>
+ Dispose of an object when we&apos;re disposed
+</summary>
+</member>
+<member name="M:Gjallarhorn.Bindable.BindingTarget.Builder.Binding.Constant``1(Gjallarhorn.Bindable.IBindingTarget,System.String,``0)">
+<summary>
+ Add a constant (one way property) to a binding target by name
+</summary>
+</member>
+<member name="M:Gjallarhorn.Bindable.BindingTarget.Builder.Binding.Command(Gjallarhorn.Bindable.IBindingTarget,System.String,System.Windows.Input.ICommand)">
+<summary>
+ Add a command (one way property) to a binding target by name
+</summary>
+</member>
+<member name="T:Gjallarhorn.Bindable.BindingTarget.Builder.Binding">
+<summary>
+ A computational expression builder for a binding target
+</summary>
+</member>
+<member name="T:Gjallarhorn.Bindable.BindingTarget">
+<summary>
+ Functions to work with binding targets     
+</summary>
+</member>
+<member name="M:Gjallarhorn.Bindable.Command.subscribe(Microsoft.FSharp.Core.FSharpFunc{System.DateTime,Microsoft.FSharp.Core.Unit},Gjallarhorn.Bindable.ITrackingCommand{Gjallarhorn.Bindable.CommandState})">
+<summary>
+ Create a subscription to the changes of a command which calls the provided function upon each change
+</summary>
+</member>
+<member name="M:Gjallarhorn.Bindable.Command.createEnabled">
+<summary>
+ Create a command which is always enabled
+</summary>
+</member>
+<member name="M:Gjallarhorn.Bindable.Command.create(Gjallarhorn.ISignal{System.Boolean})">
+<summary>
+ Create a command with an optional enabling source, provided as an ISignal&lt;bool&gt;
+</summary>
+</member>
+<member name="T:Gjallarhorn.Bindable.Command">
+<summary>
+ Core module for creating and using ICommand implementations
+</summary>
+</member>
+</members>
+</doc>

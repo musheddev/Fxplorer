@@ -1,0 +1,12 @@
+C:\Users\Orlando\Desktop\Active Projects\Libraries\Gjallarhorn-master\bin\Gjallarhorn.Bindable.XML
+C:\Users\Orlando\Desktop\Active Projects\Libraries\Gjallarhorn-master\bin\Gjallarhorn.Bindable.dll
+C:\Users\Orlando\Desktop\Active Projects\Libraries\Gjallarhorn-master\bin\Gjallarhorn.Bindable.pdb
+C:\Users\Orlando\Desktop\Active Projects\Libraries\Gjallarhorn-master\src\Gjallarhorn.Bindable\obj\Debug\Gjallarhorn.Bindable.fsprojResolveAssemblyReference.cache
+C:\Users\Orlando\Desktop\Active Projects\Libraries\Gjallarhorn-master\src\Gjallarhorn.Bindable\obj\Debug\Gjallarhorn.Bindable.dll
+C:\Users\Orlando\Desktop\Active Projects\Libraries\Gjallarhorn-master\src\Gjallarhorn.Bindable\obj\Debug\Gjallarhorn.Bindable.pdb
+C:\Users\Orlando\Desktop\Active Projects\bin\Gjallarhorn.Bindable.XML
+C:\Users\Orlando\Desktop\Active Projects\bin\Gjallarhorn.Bindable.dll
+C:\Users\Orlando\Desktop\Active Projects\bin\Gjallarhorn.Bindable.pdb
+C:\Users\Orlando\Desktop\Active Projects\Fxplorer\Gjallarhorn.Bindable\obj\Debug\Gjallarhorn.Bindable.fsprojResolveAssemblyReference.cache
+C:\Users\Orlando\Desktop\Active Projects\Fxplorer\Gjallarhorn.Bindable\obj\Debug\Gjallarhorn.Bindable.dll
+C:\Users\Orlando\Desktop\Active Projects\Fxplorer\Gjallarhorn.Bindable\obj\Debug\Gjallarhorn.Bindable.pdb

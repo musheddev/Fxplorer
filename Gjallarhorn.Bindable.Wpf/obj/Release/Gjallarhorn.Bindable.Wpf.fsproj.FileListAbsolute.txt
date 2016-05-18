@@ -1,0 +1,6 @@
+C:\Users\Orlando\Desktop\Active Projects\Libraries\Gjallarhorn-master\bin\Gjallarhorn.Bindable.Wpf.XML
+C:\Users\Orlando\Desktop\Active Projects\Libraries\Gjallarhorn-master\bin\Gjallarhorn.Bindable.Wpf.dll
+C:\Users\Orlando\Desktop\Active Projects\Libraries\Gjallarhorn-master\bin\Gjallarhorn.Bindable.Wpf.pdb
+C:\Users\Orlando\Desktop\Active Projects\Libraries\Gjallarhorn-master\src\Gjallarhorn.Bindable.Wpf\obj\Release\Gjallarhorn.Bindable.Wpf.fsprojResolveAssemblyReference.cache
+C:\Users\Orlando\Desktop\Active Projects\Libraries\Gjallarhorn-master\src\Gjallarhorn.Bindable.Wpf\obj\Release\Gjallarhorn.Bindable.Wpf.dll
+C:\Users\Orlando\Desktop\Active Projects\Libraries\Gjallarhorn-master\src\Gjallarhorn.Bindable.Wpf\obj\Release\Gjallarhorn.Bindable.Wpf.pdb
